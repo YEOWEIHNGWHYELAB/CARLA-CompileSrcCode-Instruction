@@ -71,11 +71,12 @@ python3 spawn_npc.py
 cd PythonAPI/examples
 python3 dynamic_weather.py 
 
-### The PythonAPI will be built based on the installed Python version, but the docs will use Python3 by default.
+The PythonAPI will be built based on the installed Python version, but the docs will use Python3 by default.
 
 Additionally…
 
 | Command | Description |
+| ------------- | ------------- |
 | make help | Prints all available commands. |
 | make launch | Launches CARLA server in Editor window. |
 | make PythonAPI | Builds the CARLA client. |
