@@ -11,6 +11,7 @@ Ensure that you have all these. Otherwise, the VS2017 x64 terminal will give err
 -	Python3 x64 is the main script language in CARLA. Having a x32 version installed may cause conflict, so it is highly advisable to have it uninstalled.
 	Ensure that all the above stated are added into environmental path.
 -	Visual Studio 2017 is also required. You will need the following installed. 
+
 	•	Windows 8.1 SDK. Select it in the Installation details section on the right.
 	•	x64 Visual C++ Toolset. In the Workloads section, choose Desktop development with C++. This will enable a x64 command prompt that will be used for the build. Check it up by pressing the Win button and searching for x64. Be careful to not open a x86_x64 prompt.
 
