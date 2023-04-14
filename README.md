@@ -14,20 +14,24 @@ Ensure that you have all these. Otherwise, the VS2017 x64 terminal will give err
 	•	Windows 8.1 SDK. Select it in the Installation details section on the right.
 	•	x64 Visual C++ Toolset. In the Workloads section, choose Desktop development with C++. This will enable a x64 command prompt that will be used for the build. Check it up by pressing the Win button and searching for x64. Be careful to not open a x86_x64 prompt.
 
-Other Visual Studio versions may cause conflict. Even if these have been uninstalled, some registers may persist. To completely clean Visual Studio from the computer, go to Program Files (x86)\Microsoft Visual Studio\Installer\resources\app\layout and run .\InstallCleanup.exe -full
+Other Visual Studio versions may cause conflict. Even if these have been uninstalled, some registers may persist. To completely clean Visual Studio from the computer, go to: `Program Files (x86)\Microsoft Visual Studio\Installer\resources\app\layout and run .\InstallCleanup.exe -full`
 
 ## Getting UE4:
 
 You will need to have your GitHub account linked to UE account so that you can have access their source code. You will need UE 4.24. Since CARLA 0.9.11, it is no longer possible for you to just download the UE4 provided by Unreal. You must compile from the source code. 
 
-Clone the Repo: git clone --depth=1 -b 4.24 https://github.com/EpicGames/UnrealEngine.git 
-Then CD into the Repo and run the patch:     
-cd UnrealEngine 
-powershell -Command "(New-Object System.Net.WebClient).DownloadFile('https://carla-releases.s3.eu-west-3.amazonaws.com/Backup/UE4_patch_wheels.patch', 'UE4_patch_wheels.patch')"
-git apply UE4_patch_wheels.patch
+Clone the Repo: `git clone --depth=1 -b 4.24 https://github.com/EpicGames/UnrealEngine.git`
+
+Then CD into the Repo and run the patch:
+
+- `cd UnrealEngine`
+- `powershell -Command "(New-Object System.Net.WebClient).DownloadFile('https://carla-releases.s3.eu-west-3.amazonaws.com/Backup/UE4_patch_wheels.patch', 'UE4_patch_wheels.patch')"`
+- `git apply UE4_patch_wheels.patch`
+
 Run the configuration scripts: 
-Setup.bat
-GenerateProjectFiles.bat
+
+- `Setup.bat`
+- `GenerateProjectFiles.bat`
 
 Now, we need to compile the engine. Open the UE4.sln file inside the source folder with Visual Studio (Epic recommends 2017 or 2019 versions). Make sure that in the build bar, it is selected the 'Development Editor', 'Win64' and, 'UnrealBuildTool' options. Check this guide if you need any help. Then, in the solution explorer, right-click in UE4 and select Build.
 
@@ -38,7 +42,7 @@ Once the solution is compiled you can open the engine to check that everything w
 This section is the most troublesome one, because CARLA source code has missing files and various things needs to be done before hand. 
 You need x64 VS2017 terminal for all process down below. 
 
-Clone the Repo: git clone https://github.com/carla-simulator/carla
+Clone the Repo: `git clone https://github.com/carla-simulator/carla`
 
 Only the assets package is yet to be downloaded. \Util\ContentVersions.txt contains the links to the assets for CARLA releases. These must be extracted in Unreal\CarlaUE4\Content\Carla. If the path does not exist, create it. Download the latest assets to work with the current version of CARLA.
 
@@ -67,13 +71,13 @@ Run the following to test… (You can initialize CARLA’s environment by pressi
 
 ### Terminal A 
 
-cd PythonAPI/examples
-python3 spawn_npc.py  
+`cd PythonAPI/examples`
+`python3 spawn_npc.py`
 
 ### Terminal B
 
-cd PythonAPI/examples
-python3 dynamic_weather.py 
+`cd PythonAPI/examples`
+`python3 dynamic_weather.py`
 
 The PythonAPI will be built based on the installed Python version, but the docs will use Python3 by default.
 
