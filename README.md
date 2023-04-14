@@ -2,7 +2,7 @@
 
 UE4 & CARLA Built from Source Code (Windows)
 
-Required Software:
+## Required Software:
  
 Ensure that you have all these. Otherwise, the VS2017 x64 terminal will give error when compiling UE4…  
 -	CMake generates standard build files from simple configuration files.
@@ -16,7 +16,7 @@ Ensure that you have all these. Otherwise, the VS2017 x64 terminal will give err
 
 Other Visual Studio versions may cause conflict. Even if these have been uninstalled, some registers may persist. To completely clean Visual Studio from the computer, go to Program Files (x86)\Microsoft Visual Studio\Installer\resources\app\layout and run .\InstallCleanup.exe -full
 
-Getting UE4:
+## Getting UE4:
 
 You will need to have your GitHub account linked to UE account so that you can have access their source code. You will need UE 4.24. Since CARLA 0.9.11, it is no longer possible for you to just download the UE4 provided by Unreal. You must compile from the source code. 
 
@@ -33,7 +33,7 @@ Now, we need to compile the engine. Open the UE4.sln file inside the source fold
 
 Once the solution is compiled you can open the engine to check that everything was correct launching the executable Engine\Binaries\Win64\UE4Editor.exe (Any of the exe should do fine since when I did it, UE4ditor.exe is not present…)
 
-Getting CARLA:
+## Getting CARLA:
 
 This section is the most troublesome one, because CARLA source code has missing files and various things needs to be done before hand. 
 You need x64 VS2017 terminal for all process down below. 
@@ -59,21 +59,25 @@ make launch compiles the server simulator and launches Unreal Engine. Press Play
 
 The project may ask to build other instances such as UE4Editor-Carla.dll the first time. Agree in order to open the project. During the first launch, the editor may show warnings regarding shaders and mesh distance fields. These take some time to be loaded and the city will not show properly until then.
 
+## Test Compiled CARLA Simulator
+
 Finally, let's test the simulator. Inside PythonAPI/examples and PythonAPI/util there are some example scripts that may be especially useful for starters. The following commands will spawn some life into the town, and create a weather cycle. Each script should be run in one terminal.
 
 Run the following to test… (You can initialize CARLA’s environment by pressing the Play button in the UE4 editor…)
 
 ### Terminal A 
+
 cd PythonAPI/examples
 python3 spawn_npc.py  
 
 ### Terminal B
+
 cd PythonAPI/examples
 python3 dynamic_weather.py 
 
 The PythonAPI will be built based on the installed Python version, but the docs will use Python3 by default.
 
-Additionally…
+## Command Summary
 
 | Command | Description |
 | ------------- | ------------- |
