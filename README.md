@@ -74,11 +74,13 @@ Run the following to test… (You can initialize CARLA’s environment by pressi
 ### Terminal A 
 
 `cd PythonAPI/examples`
+
 `python3 spawn_npc.py`
 
 ### Terminal B
 
 `cd PythonAPI/examples`
+
 `python3 dynamic_weather.py`
 
 The PythonAPI will be built based on the installed Python version, but the docs will use Python3 by default.
